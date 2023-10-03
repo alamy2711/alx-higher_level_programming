@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 	if (list == NULL)
 		return (0);
 	
-	while (rabbit != NULL && turtle != NULL)
+	while (rabbit != NULL && turtle != NULL && rabbit != NULL)
 	{
 		rabbit = rabbit->next->next;
 		turtle = turtle->next;
