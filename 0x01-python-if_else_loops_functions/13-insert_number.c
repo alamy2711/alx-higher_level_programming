@@ -42,11 +42,11 @@ listint_t *insert_node(listint_t **head, int number)
 			tmp = (*head)->next;
 			(*head)->next = newNode;
 			newNode->next = tmp;
+			*head = originHead;
 			return (newNode);
 		}
 		*head = (*head)->next;
 	}
-
 	newNode->next = NULL;
 	(*head)->next = newNode;
 	*head = originHead;
