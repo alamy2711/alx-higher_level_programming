@@ -31,4 +31,4 @@ if __name__ == "__main__":
     a = int(args[1])
     b = int(args[3])
 
-    print(f"{a:d} {op} {b:d} = {operator(a, b):d}")
+    print("{} {} {} = {}".format(a, op, b, operator(a, b)))
