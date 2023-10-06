@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     if argsLen != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
+        sys.exit(1)
 
     match args[2]:
         case '+':
@@ -26,7 +26,7 @@ if __name__ == "__main__":
             op = '/'
         case default:
             print("Unknown operator. Available operators: +, -, * and / f")
-            exit(1)
+            sys.exit(1)
 
     a = int(args[1])
     b = int(args[3])
