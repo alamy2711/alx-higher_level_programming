@@ -11,24 +11,19 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
+    a = int(args[1])
+    b = int(args[3])
+
     match args[2]:
         case '+':
-            operator = add
-            op = '+'
+            print("{} + {} = {}".format(a, b, add(a, b)))
         case '-':
-            operator = sub
-            op = '-'
+            print("{} - {} = {}".format(a, b, sub(a, b)))
         case '*':
-            operator = mul
-            op = '*'
+            print("{} * {} = {}".format(a, b, mul(a, b)))
         case '/':
-            operator = div
-            op = '/'
+            print("{} / {} = {}".format(a, b, div(a, b)))
         case default:
             print("Unknown operator. Available operators: +, -, * and / f")
             sys.exit(1)
 
-    a = int(args[1])
-    b = int(args[3])
-
-    print("{} {} {} = {}".format(a, op, b, operator(a, b)))
