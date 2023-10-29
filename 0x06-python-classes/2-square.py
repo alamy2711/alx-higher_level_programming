@@ -5,6 +5,10 @@ This is the module for the Square class.
 
 
 class Square:
+    """
+    This is the Square class.
+    """
+
     def __init__(self, size=0):
         """
         Initializes the Square class.
