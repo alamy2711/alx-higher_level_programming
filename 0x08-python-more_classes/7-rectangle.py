@@ -76,7 +76,7 @@ class Rectangle:
         Represents the rectangle with the specified symbol.
 
         Returns:
-            str: A string representation of the rectangle using the specified symbol.
+            str: A string representation of the rectangle.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
