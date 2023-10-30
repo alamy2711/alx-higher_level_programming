@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines the Rectangle class.
+"""
+
 
 class Rectangle:
     """Defines a Rectangle class.
@@ -72,7 +76,7 @@ class Rectangle:
             return ""
         rect = []
         for i in range(self.__height):
-            rect.extend(['#'] * self.__width)
+            rect.extend(["#"] * self.__width)
             if i != self.__height - 1:
                 rect.append("\n")
         return "".join(rect)
