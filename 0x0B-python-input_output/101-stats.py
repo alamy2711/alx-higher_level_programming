@@ -1,28 +1,38 @@
 #!/usr/bin/python3
-
+"""Module for log parsing script."""
 import sys
 
-dict_status = {}
-total_size = 0
-total_count = 0
+if __name__ == "__main__":
+    size = [0]
+    codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
-for line in sys.stdin:
-    split = line.split()
-    status = split[-2]
-    total_size += int(split[-1])
+    def check_match(line):
+        """Checks for regexp match in line."""
+        try:
+            line = line[:-1]
+            words = line.split(" ")
+            size[0] += int(words[-1])
+            code = int(words[-2])
+            if code in codes:
+                codes[code] += 1
+        except:
+            pass
 
-    if status in dict_status:
-        dict_status[status] += 1
-    else:
-        dict_status[status] = 1
+    def print_stats():
+        """Prints accumulated statistics."""
+        print("File size: {}".format(size[0]))
+        for k in sorted(codes.keys()):
+            if codes[k]:
+                print("{}: {}".format(k, codes[k]))
 
-    total_count += 1
-
-    if total_count == 10:
-        sorted_keys = sorted(dict_status.keys())
-        print("File size:", total_size)
-
-        for key in sorted_keys:
-            print("{}: {}".format(key, dict_status[key]))
-
-        total_count = 0
+    i = 1
+    try:
+        for line in sys.stdin:
+            check_match(line)
+            if i % 10 == 0:
+                print_stats()
+            i += 1
+    except KeyboardInterrupt:
+        print_stats()
+        raise
+    print_stats()
