@@ -101,3 +101,13 @@ class Rectangle(Base):
         strWidthHeight = "{}/{}".format(self.width, self.height)
 
         return strRectangle + strId + strXY + strWidthHeight
+
+    # Update Method
+    def update(self, *args):
+        """Update method"""
+        for arg in args:
+            self.id = arg
+            self.__width = arg
+            self.__height = arg
+            self.__x = arg
+            self.y = arg
