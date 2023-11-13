@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Base class"""
 
 
 class Base:
+    """This class represents a base class with a shared ID counter."""
 
     __nb_objects = 0
 
