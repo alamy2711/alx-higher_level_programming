@@ -8,9 +8,6 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initializes a new instance of the Base class.
-        ique ID is assigned using the shared counter __nb_objects.
-        """
         if id is not None:
             self.id = id
         else:
