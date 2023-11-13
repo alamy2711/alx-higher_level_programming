@@ -74,4 +74,3 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print("#", end="")
             print()
-
