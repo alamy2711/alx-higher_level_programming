@@ -9,10 +9,7 @@ class Base:
 
     def __init__(self, id=None):
         """Initializes a new instance of the Base class.
-
-        Args:
-            id (int, optional): The identifier for the instance. If None,
-                a unique ID is assigned using the shared counter __nb_objects.
+        ique ID is assigned using the shared counter __nb_objects.
         """
         if id is not None:
             self.id = id
