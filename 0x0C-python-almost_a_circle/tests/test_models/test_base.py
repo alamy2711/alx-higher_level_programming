@@ -2,9 +2,14 @@
 import unittest
 from models.base import Base
 
+"""Test Module for Base"""
+
 
 class TestBase(unittest.TestCase):
+    """TestBase class methods"""
+
     def test_id(self):
+        """Test id assignment"""
         b1 = Base()
         b2 = Base()
         b3 = Base()
