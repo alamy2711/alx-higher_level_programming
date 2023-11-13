@@ -114,8 +114,8 @@ class Rectangle(Base):
                 self.y = arg
         else:
             for key, value in args:
-                self.id = value
-                self.__width = value
-                self.__height = value
-                self.__x = value
-                self.y = value
+                self.key = value
+                self.key = value
+                self.key = value
+                self.key = value
+                self.key = value
