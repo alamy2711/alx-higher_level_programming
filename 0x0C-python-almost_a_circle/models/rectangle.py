@@ -113,7 +113,7 @@ class Rectangle(Base):
                 self.__x = arg
                 self.y = arg
         else:
-            for key, value in args:
+            for key, value in kwargs.items():
                 self.key = value
                 self.key = value
                 self.key = value
