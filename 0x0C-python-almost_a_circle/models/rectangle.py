@@ -103,7 +103,7 @@ class Rectangle(Base):
         return strRectangle + strId + strXY + strWidthHeight
 
     # Update Method
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update method"""
         if args is None and len(args) is not 0:
             for arg in args:
