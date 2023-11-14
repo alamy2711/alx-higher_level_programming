@@ -22,7 +22,7 @@ class Square(Rectangle):
         return self.width
 
     @size.setter
-    def width(self, value):
+    def sze(self, value):
         """Set size with validation"""
-        self.__width = value
-        self.__height = value
+        self.width = value
+        self.height = value
