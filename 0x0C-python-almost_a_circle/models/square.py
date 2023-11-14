@@ -26,3 +26,20 @@ class Square(Rectangle):
         """Set size with validation"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        attributesList = ["id", "size", "x", "y"]
+        if args is None and len(args) != 0:
+            for i in range(len(args)):
+                if attributesList[i] == "size":
+                    setattr(self, "width", args[i])
+                    setattr(self, "height", args[i])
+                else:
+                    setattr(self, attributesList[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == "size":
+                    setattr(self, "width", value)
+                    setattr(self, "height", value)
+                else:
+                    setattr(self, key, value)
