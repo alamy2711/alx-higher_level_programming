@@ -14,3 +14,15 @@ class Square(Rectangle):
         """str special method"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
+
+    # Size Setter
+    @property
+    def size(self):
+        """size getter"""
+        return self.width
+
+    @size.setter
+    def width(self, value):
+        """Set size with validation"""
+        self.width = value
+        self.height = value
