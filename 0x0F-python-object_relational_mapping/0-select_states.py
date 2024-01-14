@@ -1,55 +1,40 @@
 #!/usr/bin/python3
 """
-This script retrieves and prints all states from the 'hbtn_0e_0_usa' database.
+This script lists all states from the database `hbtn_0e_0_usa`.
 """
 
 import MySQLdb
 from sys import argv
 
-
-def retrieve_states_from_database(host, user, password, database_name):
-    """
-    Connect to the MySQL database and retrieve all states.
-
-    Args:
-        host (str): The database host.
-        user (str): The database user.
-        password (str): The database user's password.
-        database_name (str): The name of the database.
-
-    Returns:
-        list: A list of tuples representing the retrieved states.
-    """
-    db = MySQLdb.connect(host=host, user=user, passwd=password,
-                         db=database_name)
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states")
-    rows = cur.fetchall()
-    db.close()
-    return rows
-
-
-def print_states(states):
-    """
-    Print the retrieved states.
-
-    Args:
-        states (list): A list of tuples representing the states.
-    """
-    for state in states:
-        print(state)
-
-
 if __name__ == '__main__':
+    """
+    Access the database and retrieve the states.
+    """
     # Check if the correct number of command-line arguments is provided
-    if len(argv) != 5:
-        print("Usage: {} <host> <user> <password> <database>".format(argv[0]))
+    if len(argv) != 4:
+        print("Usage: {} <username> <password> <database>".format(argv[0]))
         exit(1)
 
-    host, user, password, database_name = argv[1:5]
+    # Extracting command-line arguments
+    username, password, database = argv[1], argv[2], argv[3]
 
-    # Retrieve states from the database
-    states = retrieve_states_from_database(host, user, password, database_name)
+    # Connect to the database
+    db = MySQLdb.connect(host="localhost", user=username, port=3306,
+                         passwd=password, db=database)
 
-    # Print the retrieved states
-    print_states(states)
+    # Create a cursor object to interact with the database
+    cursor = db.cursor()
+
+    # Execute the SQL query to select all states
+    cursor.execute("SELECT * FROM states")
+
+    # Fetch all the rows from the result set
+    rows = cursor.fetchall()
+
+    # Display the retrieved states
+    for row in rows:
+        print(row)
+
+    # Close the cursor and database connection
+    cursor.close()
+    db.close()
