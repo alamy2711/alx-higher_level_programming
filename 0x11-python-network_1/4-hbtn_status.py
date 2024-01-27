@@ -14,8 +14,8 @@ import requests
 
 
 # Send a GET request to the specified URL
-if __name__ == "__main__":
-    req = requests.get("https://intranet.hbtn.io/status")
+if __name__ == '__main__':
+    req = requests.get('https://alx-intranet.hbtn.io/status')
     print("Body response:")
-    print(f"\t- type: {type(req.text)}")
-    print(f"\t- content: {req.text}")
+    print("\t- type: {}".format(type(req.text)))
+    print("\t- content: {}".format(req.text))
