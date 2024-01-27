@@ -25,6 +25,3 @@ def fetch_hbtn_status():
         print(f"\t- content: {content}")
         print(f"\t- utf8 content: {utf8_content}")
 
-
-if __name__ == "__main__":
-    fetch_hbtn_status()
