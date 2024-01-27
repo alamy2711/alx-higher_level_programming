@@ -21,6 +21,6 @@ def fetch_hbtn_status():
             utf8_content = content.decode(encoding='utf-8')
 
             print("Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(utf8_content))
+            print("\t- type: {}".format(type(content)))
+            print("\t- content: {}".format(content))
+            print("\t- utf8 content: {}".format(utf8_content))
