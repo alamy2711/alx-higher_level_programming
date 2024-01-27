@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module: fetch_url.py
+Module: 3-error_code.py
 
 Description:
 This script takes in a URL, sends a request to the URL,
