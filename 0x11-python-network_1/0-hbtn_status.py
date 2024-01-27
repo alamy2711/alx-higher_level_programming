@@ -10,15 +10,13 @@ information about the response.
 from urllib import request
 
 
-def fetch_hbtn_status():
-    """
-    Fetches https://intranet.hbtn.io/status and prints response information.
-    """
+if __name__ == "__main__":
+    url = "https://intranet.hbtn.io/status"
+    with request.urlopen(url) as response:
+        content = response.read()
+        utf8_content = content.decode(encoding='utf-8')
 
-    if __name__ == "__main__":
-        with request.urlopen("https://intranet.hbtn.io/status") as res:
-            res = res.read()
-            print("Body res:")
-            print("\t- type: {}".format(type(res)))
-            print("\t- content: {}".format(res))
-            print("\t- utf8 content: {}".format(res.decode(encoding='utf-8')))
+        print("Body response:")
+        print(f"\t- type: {type(content)}")
+        print(f"\t- content: {content}")
+        print(f"\t- utf8 content: {utf8_content}")
