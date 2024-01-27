@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module: fetch_hbtn_status.py
+Module: 4-hbtn_status.py
 
 Description:
 This script fetches https://intranet.hbtn.io/status using the requests library
