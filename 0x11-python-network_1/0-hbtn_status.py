@@ -7,16 +7,12 @@ This script fetches https://intranet.hbtn.io/status and prints
 information about the response.
 """
 
-from urllib import request
+if __name__ == '__main__':
+    import urllib.request
 
-
-if __name__ == "__main__":
-    url = "https://intranet.hbtn.io/status"
-    with request.urlopen(url) as response:
-        content = response.read()
-        utf8_content = content.decode(encoding='utf-8')
-
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
+        content = res.read()
         print("Body response:")
-        print(f"\t- type: {type(content)}")
-        print(f"\t- content: {content}")
-        print(f"\t- utf8 content: {utf8_content}")
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode('utf-8')))
